@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Multiplication Table </title>
+		<style>
+			body {
+				background-color: lightblue;
+			}
+			table{
+				border-collapse: collapse;
+			}
+			td, th{
+				border: 3px solid black;
+				padding: 10px;
+				width: 20px;
+				height: 20px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h2> Multiplication Table </h2>
+		<div id="tableBoxes"></div>
+		<script>
+			var n = parseInt(prompt("Enter the number of rows that is between 2-10: "));
+			var m = parseInt(prompt("Enter the number of columns that is also between 2-10: "));
+			
+			if(n >= 2 && n <= 10 && m >= 2 && m <= 10){
+				multiplicationTable(n, m);
+			} else {
+				alert("The number/s is/are not between 2-10!");
+			}
+			
+			function multiplicationTable(n, m){
+				var tableWhole = "<table>";
+				for (var i = 1; i <= n; i++){
+					tableWhole += "<tr>";
+					for (var j = 1; j <= m; j++){
+						tableWhole += "<td>" + (i * j) + "</td>";
+					}
+					tableWhole += "</tr>";
+				}
+				tableWhole += "</table>"
+				document.getElementById("tableBoxes").innerHTML = tableWhole;
+			}
+		</script>
+	</body>
+</html>
+			
+			
